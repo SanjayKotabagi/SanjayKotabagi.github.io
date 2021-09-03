@@ -417,11 +417,13 @@ p {
 #about .col-right h2 {
 	font-size: 1.8rem;
 	font-weight: 500;
+	font-weight: bold;
 	letter-spacing: .2rem;
 	margin-bottom: 10px;
 }
 #about .col-right p {
 	margin-bottom: 20px;
+	font-weight: 500;
 }
 #about .col-right .cta {
 	color: black;
@@ -440,8 +442,8 @@ p {
 	position: absolute;
 	left: -33px;
 	top: 19px;
-	height: 98%;
-	width: 98%;
+	height: 100%;
+	width: 10%;
 	border: 7px solid crimson;
 	z-index: -1;
 }
