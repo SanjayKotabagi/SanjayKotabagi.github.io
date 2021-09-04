@@ -704,7 +704,7 @@ p {
 		display: none;
 	}
 	#header .nav-list ul {
-		position: initial;
+		position:initial;
 		display: block;
 		height: auto;
 		width: fit-content;
@@ -915,6 +915,19 @@ p {
 #about .col-left {
 	width: 250px;
 	height: 360px;
-	margin-left: 5px;
+	margin-left: 35px;
+}
+
+#header .nav-list ul {
+	margin-left: 14px;
+}
+#header .nav-list ul a:after {
+	visibility: visible;
+}
+
+#contact .contact {
+	align-items: center;
+	justify-content: center;
+	margin-left: 12px;
 }
 }
