@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="secret">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Denied | Security Breach Event</title>
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="scanline-screen" style="height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #050816;">
+  
+  <div class="moving-grid-bg"></div>
+
+  <!-- Central Breach Panel -->
+  <div class="cyber-card danger-glow-pulse" style="max-width: 500px; width: 90%; padding: var(--spacing-lg); text-align: center; position: relative; z-index: 10;">
+    <div style="color: var(--color-danger); font-size: 4rem; font-weight: 700; font-family: var(--font-headings); line-height: 1; margin-bottom: var(--spacing-xs);">404</div>
+    
+    <div class="status-badge critical" style="margin-bottom: var(--spacing-md); font-weight: 700;">
+      <span class="dot"></span> STATUS: ACCESS PROHIBITED
+    </div>
+
+    <h2 class="card-title" style="justify-content: center; font-size: 1.25rem; border: none; margin-bottom: var(--spacing-sm);">
+      <i data-lucide="shield-alert" class="terminal-danger"></i> RESOURCE NOT LOCATED
+    </h2>
+
+    <p class="terminal-muted" style="font-family: var(--font-terminal); font-size: 0.8rem; line-height: 1.5; margin-bottom: var(--spacing-lg); text-align: left; background: rgba(0,0,0,0.5); padding: var(--spacing-sm); border: 1px solid rgba(255, 77, 109, 0.15); border-radius: var(--radius-sm);">
+      [WARNING] File path pointer resolved to null.<br>
+      [ALERT] Unauthorized routing action logged.<br>
+      [SYS] Client logs recorded and transmitted to SEC-CONTROLLER.<br>
+      [INFO] Return to authorized gateway console below.
+    </p>
+
+    <a href="index.html" class="cyber-btn cyber-btn-primary magnetic" style="border-color: var(--color-danger); color: var(--color-danger); background: rgba(255, 77, 109, 0.05); width: 100%; justify-content: center;">
+      <i data-lucide="home"></i> RETURN TO SAFE GATEWAY
+    </a>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/cursor.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>

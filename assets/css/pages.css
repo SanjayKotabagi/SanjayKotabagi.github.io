@@ -1,0 +1,606 @@
+/**
+ * Antigravity Engineering - Pages-Specific CSS (Cyber Lab, Write-ups, Vault)
+ */
+
+/* ==========================================
+   1. HERO & HOME SECTION
+   ========================================== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#particles-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+  width: 100%;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.hero-pretitle {
+  font-family: var(--font-terminal);
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.hero-pretitle .pulse-node {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-primary);
+  animation: cursorBlink 1s infinite;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-xs);
+}
+
+.typed-cursor {
+  color: var(--color-primary);
+  animation: cursorBlink 1s infinite;
+}
+
+.hero-description {
+  color: var(--color-muted);
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+/* ==========================================
+   2. STATISTICS & TELEMETRY ROW
+   ========================================== */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+  text-align: center;
+  padding: var(--spacing-md) var(--spacing-sm);
+}
+
+.stat-number {
+  font-family: var(--font-headings);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-shadow: 0 0 15px rgba(var(--rgb-primary), 0.3);
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+   3. CYBER HOMELAB DIAGRAM (cyberlab.html)
+   ========================================== */
+.lab-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: var(--spacing-lg);
+}
+
+.topology-panel {
+  min-height: 400px;
+  position: relative;
+  background: rgba(5, 8, 22, 0.6);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  overflow: hidden;
+}
+
+/* Topology Interactive SVG and Nodes */
+.topology-svg {
+  width: 100%;
+  height: 380px;
+}
+
+.topo-node {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.topo-node:hover {
+  transform: scale(1.1);
+}
+
+.topo-node circle {
+  fill: var(--color-surface);
+  stroke: var(--color-primary);
+  stroke-width: 2px;
+  transition: var(--transition-fast);
+}
+
+.topo-node:hover circle {
+  stroke-width: 3px;
+  filter: drop-shadow(0 0 6px var(--color-primary));
+}
+
+.topo-node text {
+  font-family: var(--font-terminal);
+  font-size: 10px;
+  fill: var(--color-text);
+  text-anchor: middle;
+}
+
+.topo-node.active circle {
+  stroke: var(--color-secondary);
+  filter: drop-shadow(0 0 6px var(--color-secondary));
+}
+
+.topo-node.attacker circle {
+  stroke: var(--color-danger);
+  filter: drop-shadow(0 0 6px var(--color-danger));
+}
+
+.topo-node.siem circle {
+  stroke: var(--color-success);
+  filter: drop-shadow(0 0 6px var(--color-success));
+}
+
+.topo-link {
+  stroke: rgba(0, 212, 255, 0.15);
+  stroke-width: 1.5;
+  stroke-dasharray: 4;
+  animation: dash 30s linear infinite;
+}
+
+.topo-link.active-traffic {
+  stroke: var(--color-secondary);
+  stroke-width: 2;
+  stroke-dasharray: 6 3;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+.pipeline-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.pipeline-stage {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(var(--rgb-primary), 0.08);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+}
+
+.pipeline-stage.active {
+  border-color: var(--color-primary);
+  background: rgba(var(--rgb-primary), 0.03);
+}
+
+.pipeline-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(var(--rgb-primary), 0.1);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MITRE ATT&CK dashboard highlights */
+.mitre-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-terminal);
+  font-size: 0.75rem;
+}
+
+.mitre-table th, .mitre-table td {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: var(--spacing-xs);
+  text-align: left;
+}
+
+.mitre-table th {
+  background: rgba(var(--rgb-primary), 0.05);
+  color: var(--color-primary);
+}
+
+.mitre-cell.mapped {
+  background: rgba(124, 58, 237, 0.15);
+  color: var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+}
+
+.mitre-cell.active-hunt {
+  background: rgba(255, 77, 109, 0.15);
+  color: var(--color-danger);
+  border-left: 2px solid var(--color-danger);
+}
+
+/* ==========================================
+   4. WRITE-UPS & ARTICLES (writeups.html)
+   ========================================== */
+.search-filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 8px var(--spacing-md) 8px 36px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.search-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(var(--rgb-primary), 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-muted);
+  width: 16px;
+  height: 16px;
+}
+
+.filter-group {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-muted);
+  padding: 6px var(--spacing-sm);
+  border-radius: var(--radius-xs);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(var(--rgb-primary), 0.05);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-terminal);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
+.blog-link-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xxs);
+}
+
+/* ==========================================
+   5. CONTACT & VALIDATIONS (contact.html)
+   ========================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: var(--spacing-lg);
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(var(--rgb-primary), 0.05);
+  border: 1px solid rgba(var(--rgb-primary), 0.15);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-content h4 {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+.info-content p {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxs);
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.form-input, .form-textarea {
+  background: rgba(5, 8, 22, 0.4);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 10px var(--spacing-sm);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(var(--rgb-primary), 0.1);
+}
+
+.form-message {
+  font-size: 0.75rem;
+  font-family: var(--font-terminal);
+}
+
+.form-message.success { color: var(--color-success); }
+.form-message.error { color: var(--color-danger); }
+
+/* Availability Feed Widget */
+.availability-feed {
+  background: rgba(var(--rgb-primary), 0.02);
+  border: 1px solid rgba(var(--rgb-primary), 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.feed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.pulse-icon {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-success);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-success);
+  animation: cursorBlink 1.5s infinite;
+}
+
+/* ==========================================
+   6. RESUME PRINT DESIGN (resume.html)
+   ========================================== */
+.resume-view {
+  background: var(--color-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  box-shadow: var(--glass-shadow);
+  max-width: 900px;
+  margin: 0 auto var(--spacing-xl) auto;
+}
+
+.resume-header {
+  border-bottom: 2px solid rgba(var(--rgb-primary), 0.15);
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.resume-heading h1 {
+  font-size: 2.5rem;
+}
+
+.resume-heading p {
+  color: var(--color-primary);
+  font-family: var(--font-terminal);
+  font-size: 1rem;
+}
+
+.resume-contact-info {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.resume-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.resume-section-title {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 4px;
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.resume-job {
+  margin-bottom: var(--spacing-md);
+}
+
+.resume-job-title {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.resume-job-company {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: var(--spacing-xxs);
+}
+
+.resume-bullets {
+  padding-left: var(--spacing-md);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.resume-bullets li {
+  margin-bottom: 4px;
+}
+
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  
+  .cyber-header, .cyber-footer, .cyber-btn, #back-to-top, .custom-cursor, .custom-cursor-dot, .mouse-spotlight {
+    display: none !important;
+  }
+  
+  .resume-view {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  
+  .resume-section-title {
+    color: #000000 !important;
+    border-bottom: 1px solid #000000 !important;
+  }
+  
+  .resume-heading p, .resume-job-title span {
+    color: #333333 !important;
+  }
+  
+  .resume-job-company {
+    color: #555555 !important;
+  }
+  
+  a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+}

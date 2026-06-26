@@ -1,0 +1,146 @@
+/* Background Grid Movement */
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+.moving-grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Pulsing Cyber Glow (Primary Color) */
+@keyframes cyberGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(var(--rgb-primary), 0.1), inset 0 0 10px rgba(var(--rgb-primary), 0.05);
+    border-color: rgba(var(--rgb-primary), 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(var(--rgb-primary), 0.25), inset 0 0 15px rgba(var(--rgb-primary), 0.1);
+    border-color: rgba(var(--rgb-primary), 0.35);
+  }
+}
+
+.cyber-glow-pulse {
+  animation: cyberGlow 3s ease-in-out infinite;
+}
+
+/* Alert/Breach Pulse */
+@keyframes dangerPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(var(--rgb-danger), 0.1), inset 0 0 5px rgba(var(--rgb-danger), 0.05);
+    border-color: rgba(var(--rgb-danger), 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(var(--rgb-danger), 0.3), inset 0 0 15px rgba(var(--rgb-danger), 0.15);
+    border-color: rgba(var(--rgb-danger), 0.5);
+  }
+}
+
+.danger-glow-pulse {
+  animation: dangerPulse 2s ease-in-out infinite;
+}
+
+/* Terminal Cursor Blinking */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: var(--color-primary);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: cursorBlink 1s step-end infinite;
+}
+
+/* Threat Log Flow (Ticker style or standard row) */
+@keyframes scrollUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-33.33%); }
+}
+
+/* CSS Scanline Overlay (CRTs and displays) */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scanline-screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.scanline-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: rgba(var(--rgb-primary), 0.1);
+  animation: scanline 6s linear infinite;
+  pointer-events: none;
+  z-index: 11;
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+.float-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Text Decrypt / Glitch Shift */
+@keyframes glitchText {
+  0% { text-shadow: 1px 0px var(--color-primary), -1px 0px var(--color-secondary); }
+  50% { text-shadow: -1px 0px var(--color-success), 1px 0px var(--color-danger); }
+  100% { text-shadow: 1px 0px var(--color-primary), -1px 0px var(--color-secondary); }
+}
+
+.cyber-glitch-text:hover {
+  animation: glitchText 0.3s linear infinite;
+}
+
+/* Reveal Entrance Effects */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}

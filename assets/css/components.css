@@ -1,0 +1,345 @@
+/**
+ * Antigravity Engineering - Cyber Security Glassmorphic Components
+ */
+
+/* Header and Telemetry Navbar */
+.cyber-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-backdrop-blur);
+  -webkit-backdrop-filter: var(--glass-backdrop-blur);
+  box-shadow: var(--glass-shadow);
+  padding: var(--spacing-sm) 0;
+  transition: var(--transition-normal);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.brand-accent {
+  color: var(--color-primary);
+  text-shadow: 0 0 10px rgba(var(--rgb-primary), 0.5);
+}
+
+.telemetry-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-family: var(--font-terminal);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.telemetry-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xxs);
+}
+
+.telemetry-item strong {
+  color: var(--color-text);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition-fast);
+  position: relative;
+  padding: var(--spacing-xxs) 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: var(--transition-fast);
+  box-shadow: 0 0 8px var(--color-primary);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-text);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+/* Glassmorphic Panel (Interactive Dashboard Card) */
+.cyber-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: var(--glass-backdrop-blur);
+  -webkit-backdrop-filter: var(--glass-backdrop-blur);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.cyber-card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-primary), var(--glass-shadow);
+  transform: translateY(-4px);
+}
+
+.cyber-card:hover::before {
+  transform: translateX(100%);
+}
+
+.card-title {
+  font-family: var(--font-headings);
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-text);
+  border-bottom: 1px solid rgba(var(--rgb-primary), 0.1);
+  padding-bottom: var(--spacing-xxs);
+}
+
+.card-title i {
+  color: var(--color-primary);
+}
+
+/* Cyber Button Design */
+.cyber-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyber-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(var(--rgb-primary), 0.2), transparent);
+  transition: var(--transition-slow);
+  z-index: 1;
+}
+
+.cyber-btn-primary {
+  background: rgba(var(--rgb-primary), 0.1);
+  box-shadow: 0 0 10px rgba(var(--rgb-primary), 0.2);
+}
+
+.cyber-btn-primary:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  box-shadow: 0 0 20px rgba(var(--rgb-primary), 0.6);
+  text-shadow: none;
+}
+
+.cyber-btn-secondary {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.cyber-btn-secondary:hover {
+  background: var(--color-secondary);
+  color: var(--color-text);
+  box-shadow: 0 0 20px rgba(var(--rgb-secondary), 0.6);
+}
+
+.cyber-btn:hover::after {
+  left: 100%;
+}
+
+/* Enterprise Timeline UI */
+.timeline-list {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  border-left: 2px solid rgba(var(--rgb-primary), 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-node {
+  position: absolute;
+  left: calc(-1 * var(--spacing-lg) - 7px);
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 8px var(--color-primary);
+  z-index: 2;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-xs);
+}
+
+.timeline-date {
+  font-family: var(--font-terminal);
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  background: rgba(var(--rgb-primary), 0.08);
+  padding: 2px var(--spacing-xs);
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(var(--rgb-primary), 0.15);
+}
+
+/* Certificate Grid */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cert-card.locked {
+  opacity: 0.65;
+  border-style: dashed;
+}
+
+.cert-card.locked:hover {
+  opacity: 0.95;
+}
+
+.cert-status {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-family: var(--font-terminal);
+  padding-top: var(--spacing-xs);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Modern Badge */
+.tech-badge {
+  display: inline-block;
+  padding: 2px var(--spacing-xs);
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(var(--rgb-text), 0.05);
+  color: var(--color-muted);
+  border: 1px solid rgba(var(--rgb-text), 0.1);
+  transition: var(--transition-fast);
+}
+
+.tech-badge:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(var(--rgb-primary), 0.05);
+}
+
+/* Cyber Footer */
+.cyber-footer {
+  border-top: 1px solid var(--glass-border);
+  background: rgba(var(--rgb-bg), 0.95);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  position: relative;
+  z-index: 10;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+  list-style: none;
+}
+
+.social-link {
+  color: var(--color-muted);
+  font-size: 1.2rem;
+  transition: var(--transition-fast);
+}
+
+.social-link:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}

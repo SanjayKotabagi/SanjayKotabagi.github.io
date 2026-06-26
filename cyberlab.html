@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="secret">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Lab Topology | Threat Detection Range</title>
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="scanline-screen">
+
+  <!-- ==========================================
+       TOP NAVIGATION HEADER
+       ========================================== -->
+  <header class="cyber-header" style="position: sticky; top: 0;">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <span class="brand-accent">&gt;//</span>
+        <span class="brand-name">SANJAY</span>
+      </a>
+      
+      <nav style="display: flex; align-items: center; gap: var(--spacing-md);">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="experience.html" class="nav-link">Experience</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="cyberlab.html" class="nav-link active">Cyber Lab</a></li>
+          <li><a href="writeups.html" class="nav-link">Write-ups</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button id="theme-toggle-btn" class="status-badge critical">
+          <span id="security-level-indicator">SECURE LEVEL: SECRET</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN CONTENT CONTAINER
+       ========================================== -->
+  <main class="dashboard-container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
+    <div class="hero-pretitle">
+      <span class="pulse-node"></span>
+      <span>DIAGNOSTICS: LAB_TOPOLOGY.XML</span>
+    </div>
+    <h1 class="hero-title" style="font-size: 2.75rem; margin-bottom: var(--spacing-md);">CYBER LAB & <span style="color: var(--color-primary);">THREAT RANGE</span></h1>
+
+    <!-- Lab Grid: Topology Map & Details Panel -->
+    <div class="lab-grid" style="margin-bottom: var(--spacing-xl);">
+      
+      <!-- Interactive Topology Panel -->
+      <div class="topology-panel cyber-glow-pulse">
+        <div class="space-between" style="border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: var(--spacing-xs); margin-bottom: var(--spacing-sm);">
+          <strong class="terminal-accent"><i data-lucide="network"></i> ACTIVE NETWORK TOPOLOGY MAP</strong>
+          <span style="font-size: 0.7rem; font-family: var(--font-terminal); color: var(--color-muted);">CLICK NODES TO AUDIT TELEMETRY</span>
+        </div>
+
+        <!-- Inline Interactive SVG Topology Map -->
+        <svg viewBox="0 0 600 360" class="topology-svg">
+          <!-- Connection Paths (Links) -->
+          <line x1="100" y1="180" x2="220" y2="180" class="topo-link active-traffic" />
+          <line x1="220" y1="180" x2="300" y2="100" class="topo-link" />
+          <line x1="220" y1="180" x2="300" y2="260" class="topo-link" />
+          <line x1="300" y1="100" x2="480" y2="180" class="topo-link" />
+          <line x1="300" y1="260" x2="480" y2="180" class="topo-link" />
+          
+          <!-- Attacker Node -->
+          <g class="topo-node attacker" transform="translate(100, 180)" onclick="selectNode('attacker')">
+            <circle r="22" />
+            <text y="5" font-family="var(--font-terminal)">KALI-01</text>
+            <text y="36" fill="var(--color-muted)" font-size="8">10.0.0.99</text>
+          </g>
+
+          <!-- Gateway Firewall -->
+          <g class="topo-node active" transform="translate(220, 180)" onclick="selectNode('firewall')">
+            <circle r="20" />
+            <text y="5" font-family="var(--font-terminal)">PF-GW01</text>
+            <text y="34" fill="var(--color-muted)" font-size="8">10.0.0.1</text>
+          </g>
+
+          <!-- Windows AD Domain Controller -->
+          <g class="topo-node" transform="translate(300, 100)" onclick="selectNode('win-dc')">
+            <circle r="20" />
+            <text y="5" font-family="var(--font-terminal)">WIN-DC01</text>
+            <text y="34" fill="var(--color-muted)" font-size="8">10.0.0.100</text>
+          </g>
+
+          <!-- Linux Target server -->
+          <g class="topo-node" transform="translate(300, 260)" onclick="selectNode('linux-srv')">
+            <circle r="20" />
+            <text y="5" font-family="var(--font-terminal)">LNX-SRV01</text>
+            <text y="34" fill="var(--color-muted)" font-size="8">10.0.0.110</text>
+          </g>
+
+          <!-- SIEM Logging Server -->
+          <g class="topo-node siem" transform="translate(480, 180)" onclick="selectNode('siem-logger')">
+            <circle r="24" />
+            <text y="5" font-family="var(--font-terminal)">SIEM-LOG</text>
+            <text y="38" fill="var(--color-muted)" font-size="8">10.0.0.250</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Telemetry Node Details Panel -->
+      <div class="cyber-card" style="display: flex; flex-direction: column;">
+        <h3 class="card-title"><i data-lucide="terminal"></i> NODE INTEL REPORT</h3>
+        
+        <div id="node-report-content" style="flex: 1; font-family: var(--font-terminal); font-size: 0.85rem; line-height: 1.5;">
+          <p class="terminal-muted">Select any network node on the topology grid map to query active syslog payloads, host classifications, and detection rule triggers.</p>
+          <br>
+          <div style="border: 1px dashed rgba(var(--rgb-primary), 0.2); padding: var(--spacing-sm); border-radius: var(--radius-sm); text-align: center;">
+            <i data-lucide="info" style="width: 24px; height: 24px; color: var(--color-primary); margin-bottom: 4px;"></i>
+            <p style="font-size: 0.75rem;">Waiting for node telemetry link selection...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detection Ingestion Pipeline -->
+    <section style="margin-bottom: var(--spacing-xl);">
+      <h2 class="card-title" style="font-size: 1.5rem; margin-bottom: var(--spacing-md);"><i data-lucide="git-commit"></i> LOG INGESTION & PIPELINE STAGES</h2>
+      
+      <div class="pipeline-flow">
+        <div class="pipeline-stage active fade-in-up active">
+          <div class="pipeline-icon"><i data-lucide="file-text"></i></div>
+          <div>
+            <strong class="terminal-accent">1. Log Generation (Endpoint Audits)</strong>
+            <p class="terminal-muted" style="font-size: 0.85rem;">Audit events generated via Windows Sysmon (Event ID 1: Process Creation, ID 11: File Creation) and Linux Auditd/Syslogs.</p>
+          </div>
+        </div>
+
+        <div class="pipeline-stage active fade-in-up active">
+          <div class="pipeline-icon"><i data-lucide="send"></i></div>
+          <div>
+            <strong class="terminal-accent">2. Ingest Forwarding (Splunk UF / Logstash)</strong>
+            <p class="terminal-muted" style="font-size: 0.85rem;">Lightweight agents forward compressed events securely to central logging cluster indices over SSL port 9997.</p>
+          </div>
+        </div>
+
+        <div class="pipeline-stage active fade-in-up active">
+          <div class="pipeline-icon"><i data-lucide="filter"></i></div>
+          <div>
+            <strong class="terminal-accent">3. Ingest Parsing & Normalization</strong>
+            <p class="terminal-muted" style="font-size: 0.85rem;">Indices parse RAW payloads, normalise headers into consistent mappings, and extract key fields (IP, User, Hashes).</p>
+          </div>
+        </div>
+
+        <div class="pipeline-stage active fade-in-up active">
+          <div class="pipeline-icon"><i data-lucide="bell-ring"></i></div>
+          <div>
+            <strong class="terminal-accent">4. Threat Correlation Rules (Sigma & SPL alerts)</strong>
+            <p class="terminal-muted" style="font-size: 0.85rem;">Alerting engines monitor index activities. Correlated patterns (e.g. Brute force followed by admin login) trigger Slack/Jira notifications.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MITRE ATT&CK Matrix Mapping Coverage -->
+    <section>
+      <h2 class="card-title" style="font-size: 1.5rem; margin-bottom: var(--spacing-md);"><i data-lucide="grid"></i> MITRE ATT&CK ALIGNED PROTECTION MATRIX</h2>
+      <p class="terminal-muted" style="font-size: 0.85rem; margin-bottom: var(--spacing-sm);">Tactical detection rules implemented in Sanjay's laboratory to identify known threat actor techniques.</p>
+      
+      <div class="mitre-table-wrapper">
+        <table class="mitre-table">
+          <thead>
+            <tr>
+              <th>Initial Access</th>
+              <th>Execution</th>
+              <th>Persistence</th>
+              <th>Credential Access</th>
+              <th>Lateral Movement</th>
+              <th>Command & Control</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mitre-cell mapped">T1190<br><span style="font-size:0.65rem;">Exploit Public App</span></td>
+              <td class="mitre-cell mapped">T1059<br><span style="font-size:0.65rem;">Command Shells</span></td>
+              <td class="mitre-cell mapped">T1543<br><span style="font-size:0.65rem;">Create System Service</span></td>
+              <td class="mitre-cell mapped">T1110<br><span style="font-size:0.65rem;">Brute Force</span></td>
+              <td class="mitre-cell mapped">T1021<br><span style="font-size:0.65rem;">Remote Services</span></td>
+              <td class="mitre-cell mapped">T1071<br><span style="font-size:0.65rem;">Application Protocol</span></td>
+            </tr>
+            <tr>
+              <td class="mitre-cell">T1566<br><span style="font-size:0.65rem;">Phishing Ingress</span></td>
+              <td class="mitre-cell mapped">T1204<br><span style="font-size:0.65rem;">User Execution</span></td>
+              <td class="mitre-cell">T1098<br><span style="font-size:0.65rem;">Account Manipulation</span></td>
+              <td class="mitre-cell active-hunt">T1003<br><span style="font-size:0.65rem;">LSASS Dumping</span></td>
+              <td class="mitre-cell mapped">T1550<br><span style="font-size:0.65rem;">Use Alternate Token</span></td>
+              <td class="mitre-cell">T1573<br><span style="font-size:0.65rem;">Encrypted Channel</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       GLOBAL FOOTER
+       ========================================== -->
+  <footer class="cyber-footer">
+    <div class="footer-content">
+      <ul class="social-links">
+        <li><a href="https://github.com/sanjaykotabagi" target="_blank" class="social-link"><i data-lucide="github"></i></a></li>
+        <li><a href="https://linkedin.com" target="_blank" class="social-link"><i data-lucide="linkedin"></i></a></li>
+        <li><a href="mailto:sanjaymkotabagi@gmail.com" class="social-link"><i data-lucide="mail"></i></a></li>
+      </ul>
+      <p style="margin-top: var(--spacing-xxs);">© 2026 Sanjay M Kotabagi | Security Operations Center Portal | All logs monitored</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/cursor.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    const reports = {
+      attacker: `
+        <p class="terminal-danger">[ALERT] ATTACK SOURCE DETECTED</p>
+        <p>Host: Kali Linux Simulator (KALI-01)</p>
+        <p>IP Address: 10.0.0.99</p>
+        <p>Action: Executing credential brute forcing alerts against Domain Controller.</p>
+        <br>
+        <p class="terminal-muted">Threat Logs:</p>
+        <p class="terminal-warning">13:01:12 SSH login failure for user 'admin'</p>
+        <p class="terminal-warning">13:01:15 SSH login failure for user 'root'</p>
+      `,
+      firewall: `
+        <p class="terminal-accent">[GW LOG] PF-GW01 GATEWAY TELEMETRY</p>
+        <p>IP Address: 10.0.0.1 (pfSense Virtual Router)</p>
+        <p>Active Rules: Drop incoming wan requests; forward syslogs to 10.0.0.250</p>
+        <br>
+        <p class="terminal-success">[PASS] Outbound HTTPS Traffic Allowed (10.0.0.100 -> WAN)</p>
+        <p class="terminal-danger">[BLOCK] Blocked inbound port sweep on interface WAN</p>
+      `,
+      'win-dc': `
+        <p class="terminal-warning">[EVENT] WIN-DC01 SECURITY EVENTS</p>
+        <p>IP Address: 10.0.0.100 (Windows Server 2022 DC)</p>
+        <p>Role: AD Domain Controller, DNS, Kerberos Ingestion</p>
+        <br>
+        <p class="terminal-accent">Sysmon Logs Active:</p>
+        <p>Event ID 4625: Logon failure from source 10.0.0.99 (Kali)</p>
+        <p>Event ID 4768: Kerberos TGT requested for administrator - Failed</p>
+      `,
+      'linux-srv': `
+        <p class="terminal-success">[HOST] LNX-SRV01 APPLICATION AUDIT</p>
+        <p>IP Address: 10.0.0.110 (Ubuntu 22.04 Ingest Node)</p>
+        <p>Role: Web Hosting, Docker containers</p>
+        <br>
+        <p class="terminal-muted">Audits Logs Active:</p>
+        <p class="terminal-success">13:01:00 systemd[1]: Started Apache Web Server.</p>
+        <p class="terminal-success">13:01:02 dockerd: Container CriticMonk - Running.</p>
+      `,
+      'siem-logger': `
+        <p class="terminal-success">[CENTRAL] SIEM MONITOR (SPLUNK ENTERPRISE)</p>
+        <p>IP Address: 10.0.0.250 (SIEM Indexer & Dashboard Core)</p>
+        <p>Ingest Rate: 1.2 GB / day</p>
+        <br>
+        <p class="terminal-accent">Active Alerts Index:</p>
+        <p class="terminal-warning">[ALERT-403] Multi-Failed Login Threshold Exceeded (Host: WIN-DC01)</p>
+        <p class="terminal-success">[OK] Enrichment Daemon API - Virustotal query latency 12ms</p>
+      `
+    };
+
+    function selectNode(nodeId) {
+      const nodes = document.querySelectorAll('.topo-node');
+      nodes.forEach(n => n.classList.remove('active-node'));
+      
+      const reportDiv = document.getElementById('node-report-content');
+      if (reportDiv && reports[nodeId]) {
+        reportDiv.innerHTML = reports[nodeId];
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="secret">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanjay M Kotabagi | Professional Curriculum Vitae</title>
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="scanline-screen">
+
+  <!-- ==========================================
+       TOP NAVIGATION HEADER
+       ========================================== -->
+  <header class="cyber-header" style="position: sticky; top: 0;">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <span class="brand-accent">&gt;//</span>
+        <span class="brand-name">SANJAY</span>
+      </a>
+      
+      <nav style="display: flex; align-items: center; gap: var(--spacing-md);">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="experience.html" class="nav-link">Experience</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="cyberlab.html" class="nav-link">Cyber Lab</a></li>
+          <li><a href="writeups.html" class="nav-link">Write-ups</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button onclick="window.print()" class="cyber-btn cyber-btn-primary" style="padding: 4px var(--spacing-sm); font-size: 0.75rem;">
+          <i data-lucide="printer"></i> PRINT CV
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN CV VIEW CONTAINER
+       ========================================== -->
+  <main class="dashboard-container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
+    
+    <div class="resume-view">
+      <!-- CV Header -->
+      <div class="resume-header">
+        <div class="resume-heading">
+          <h1 style="font-size: 2.2rem; font-weight: 700; color: var(--color-text);">SANJAY M KOTABAGI</h1>
+          <p style="color: var(--color-primary); font-family: var(--font-terminal); font-size: 0.9rem;">SOC Analyst L2 | AI-Powered Security Automation | Detection Engineering</p>
+        </div>
+        <div class="resume-contact-info">
+          <div>sanjaymkotabagi@gmail.com</div>
+          <div>linkedin.com/in/sanjaymkotabagi</div>
+          <div>github.com/sanjaykotabagi</div>
+          <div>Bengaluru, Karnataka | +91-8147457639</div>
+        </div>
+      </div>
+
+      <!-- Professional Summary -->
+      <div class="resume-section">
+        <h2 class="resume-section-title">Professional Summary</h2>
+        <p style="font-size: 0.9rem; line-height: 1.5;">SOC Analyst L2 with 4+ years at Big4 firms (PwC and Deloitte USI) and Startup, specialising in 24x7 security operations, incident response, and detection engineering. Stands apart from most SOC analysts through production-deployed AI automation: independently built and shipped a phishing investigation system that eliminated manual triage entirely, and co-developed an in-house LLM that reduced alert-handling time by 30-40% at PwC. Hands-on across the full security stack - SIEM (Sentinel, QRadar, Splunk), EDR (SentinelOne, Defender XDR), cloud security (AWS, Azure), IAM (Okta), DLP, and network security. Primary L2 escalation point trusted by US enterprise clients with zero SLA breaches.</p>
+      </div>
+
+      <!-- Signature Achievement -->
+      <div class="resume-section" style="background: rgba(var(--rgb-primary), 0.02); border: 1px solid rgba(var(--rgb-primary), 0.15); padding: var(--spacing-sm); border-radius: var(--radius-sm); margin-bottom: var(--spacing-md);">
+        <h3 class="terminal-accent" style="font-family: var(--font-headings); font-weight: 700; font-size: 1rem; margin-bottom: 6px; text-transform: uppercase;">Signature Achievement: AI-Powered SOC Automation</h3>
+        <p class="terminal-muted" style="font-size: 0.8rem; margin-bottom: 6px; font-style: italic;">Built end-to-end from scratch - no vendor tooling, no pre-built templates. Both systems are live in production.</p>
+        <ul class="resume-bullets" style="font-size: 0.85rem; padding-left: var(--spacing-md);">
+          <li><strong>Phishing Investigation Platform:</strong> Designed and deployed a full automated phishing investigation system integrating AI classification, IOC enrichment (VirusTotal, threat intel feeds), SOP-driven logic, and automated verdict generation. Zero manual effort on standard phishing alerts.</li>
+          <li><strong>SOC alert runbook LLM:</strong> Co-architected, fine-tuned, and productionized an in-house LLM (PwC) trained on historical SOC alert data and runbooks - delivered 30-40% measurable reduction in time-to-handle.</li>
+          <li><strong>Adversarial LLaMA 2:</strong> Jailbroken LLaMA 2 (7B) fine-tuned for adversarial AI research - used as a red-team companion for adversarial prompt generation and AI threat modelling.</li>
+        </ul>
+      </div>
+
+      <!-- Professional Experience -->
+      <div class="resume-section">
+        <h2 class="resume-section-title">Professional Experience</h2>
+        
+        <!-- PwC -->
+        <div class="resume-job">
+          <div class="resume-job-title">
+            <strong>PwC | SOC Analyst L2 - Primary Escalation Point</strong>
+            <span>May 2025 – Present</span>
+          </div>
+          <ul class="resume-bullets" style="font-size: 0.85rem;">
+            <li>Primary escalation point for complex, high-severity alerts across SIEM, SOAR, IR, and Advanced Threat Hunting teams; trusted first call for US-based enterprise client incidents.</li>
+            <li>Single-handedly designed, built, and deployed a multi-workflow SOC automation platform - eliminated repetitive manual tasks across the entire analyst team without any vendor dependency.</li>
+            <li>Architected and shipped the in-house LLM for L1 triage support and L2 review assistance - 30-40% alert-handling time reduction, production-proven, still running.</li>
+            <li>Led proactive threat hunting campaigns in collaboration with ATH teams - uncovered adversary TTPs missed by automated detection.</li>
+            <li>Managed critical incident lifecycle end-to-end: zero SLA breaches, full client satisfaction maintained across all engagements.</li>
+          </ul>
+        </div>
+
+        <!-- Deloitte USI -->
+        <div class="resume-job">
+          <div class="resume-job-title">
+            <strong>Deloitte USI | SOC Analyst - L1 Escalation</strong>
+            <span>Feb 2023 – Apr 2025</span>
+          </div>
+          <ul class="resume-bullets" style="font-size: 0.85rem;">
+            <li>Delivered 24x7 SOC coverage for multiple high-profile US enterprise clients as the trusted bridge between front-line L1 analysts and L2/IR teams.</li>
+            <li>Built Python automation scripts for phishing triage - cut per-alert investigation time from 20+ minutes to under 3 minutes.</li>
+            <li>Monitored and correlated security events simultaneously across firewalls, IDS/IPS, EDR, SIEM, email security, and cloud platforms.</li>
+            <li>Developed detection hypotheses for Okta abuse, Azure account takeover, and cloud misuse scenarios - several adopted as permanent monitoring rules across client environments.</li>
+            <li>Received Spot Award for exceptional SLA adherence, accuracy, and dedication across all client SOC tickets. Multiple direct client commendations for incident handling quality.</li>
+          </ul>
+        </div>
+
+        <!-- Orbit Technologies -->
+        <div class="resume-job">
+          <div class="resume-job-title">
+            <strong>Orbit Technologies | Cloud Security L1</strong>
+            <span>Jun 2022 – Dec 2022</span>
+          </div>
+          <ul class="resume-bullets" style="font-size: 0.85rem;">
+            <li>Reviewed indices and dashboards for anomalous cloud configuration activities.</li>
+            <li>Investigated security alert triggers from Microsoft Defender for Cloud and coordinated adjustments.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Technical Skills Grid -->
+      <div class="resume-section">
+        <h2 class="resume-section-title">Technical Skills</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xs); font-size: 0.85rem;">
+          <div><strong>SIEM / XDR:</strong> Microsoft Sentinel, IBM QRadar, Splunk, IBM XDR</div>
+          <div><strong>EDR / EPP:</strong> SentinelOne, Microsoft Defender XDR, Carbon Black</div>
+          <div><strong>Cloud Security:</strong> AWS GuardDuty, Prisma Cloud, Defender for Cloud Apps, Azure AD</div>
+          <div><strong>Identity & Access:</strong> Okta IAM - ATO detection, policy enforcement</div>
+          <div><strong>Email & Web Security:</strong> Proofpoint, PhishER, Zscaler, Akamai</div>
+          <div><strong>Network & Firewall:</strong> Palo Alto Networks, IDS/IPS</div>
+          <div><strong>Security Automation:</strong> Python (IOC extraction, email forensics), SOAR workflows</div>
+          <div><strong>AI / ML in Security:</strong> LLM fine-tuning (LLaMA 2), AI alert classification, adversarial AI</div>
+          <div><strong>Offensive / Threat Intel:</strong> Metasploit, Nmap, Gobuster, MITRE ATT&CK</div>
+          <div><strong>Languages / Dev:</strong> Python, Java, JavaScript, PHP, MySQL, PL/SQL</div>
+        </div>
+      </div>
+
+      <!-- Verified Certifications -->
+      <div class="resume-section">
+        <h2 class="resume-section-title">Certifications</h2>
+        <ul class="resume-bullets" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; font-size: 0.85rem; list-style-type: square;">
+          <li>Microsoft SC-100 - Cybersecurity Architect Expert</li>
+          <li>Microsoft SC-200 - Security Operations Analyst</li>
+          <li>Cisco Cybersecurity Certification</li>
+          <li>Ethical Hacking & Penetration Testing Certification</li>
+          <li>Python - Automation and Scripting (Python Anywhere)</li>
+          <li>HackerRank - Java & Python</li>
+          <li>Git & GitHub - Certified</li>
+        </ul>
+      </div>
+
+      <!-- Education Section -->
+      <div class="resume-section">
+        <h2 class="resume-section-title">Education</h2>
+        <div class="resume-job-title">
+          <strong>Master of Computer Applications (MCA)</strong>
+          <span>Dec 2022 – Dec 2024</span>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--color-muted); margin-bottom: var(--spacing-xs);">Jain University | CGPA: 8.6 / 10</div>
+        
+        <div class="resume-job-title">
+          <strong>Bachelor of Computer Applications (BCA)</strong>
+          <span>Apr 2019 – Apr 2022</span>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--color-muted);">KLE's PC Jabin College, Hubballi | CGPA: 8.7 / 10</div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================
+       GLOBAL FOOTER
+       ========================================== -->
+  <footer class="cyber-footer">
+    <div class="footer-content">
+      <ul class="social-links">
+        <li><a href="https://github.com/sanjaykotabagi" target="_blank" class="social-link"><i data-lucide="github"></i></a></li>
+        <li><a href="https://linkedin.com" target="_blank" class="social-link"><i data-lucide="linkedin"></i></a></li>
+        <li><a href="mailto:sanjaymkotabagi@gmail.com" class="social-link"><i data-lucide="mail"></i></a></li>
+      </ul>
+      <p style="margin-top: var(--spacing-xxs);">© 2026 Sanjay M Kotabagi | Security Operations Center Portal | All logs monitored</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/cursor.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

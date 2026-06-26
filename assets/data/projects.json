@@ -1,0 +1,66 @@
+[
+  {
+    "id": "phishing-investigation-system",
+    "title": "AI Phishing Ingestion & Triage Platform",
+    "category": "cybersecurity",
+    "tech": ["Python", "VirusTotal API", "Threat Intel", "SOAR"],
+    "description": "A full-scale automated phishing investigation platform that integrates AI-based mail classification, multi-engine IOC enrichment, SOP validation checkbooks, and automated verdict outputs. Fully eliminates manual triage for standard alerts.",
+    "features": [
+      "No vendor tool dependency (built end-to-end)",
+      "Reduces triage workload by automated verdict categorization",
+      "Performs real-time headers, attachments, and URLs inspections",
+      "Logs incident metrics directly to centralized dashboards"
+    ],
+    "github": "https://github.com/sanjaykotabagi/ai-phishing-triage",
+    "demo": "",
+    "docs": "#"
+  },
+  {
+    "id": "soc-llm",
+    "title": "Fine-Tuned In-House SOC LLM",
+    "category": "automation",
+    "tech": ["Python", "PyTorch", "LLaMA 2", "Hugging Face"],
+    "description": "Co-architected and productionized an in-house Large Language Model fine-tuned on historical SOC alert data and security runbooks. Integrated as a helper bot for L1 analysts to decrease MTTR by 30-40%.",
+    "features": [
+      "Offline deployment ensuring zero client-data exposure",
+      "Auto-generates draft alert summaries and containment suggestions",
+      "Trained on categorized network logs and security incident alerts",
+      "Integrates with local enterprise database instances securely"
+    ],
+    "github": "https://github.com/sanjaykotabagi/soc-alert-llm",
+    "demo": "",
+    "docs": "#"
+  },
+  {
+    "id": "jailbroken-llama-redteam",
+    "title": "Adversarial LLaMA 2 Jailbreaker",
+    "category": "python",
+    "tech": ["Python", "Transformers", "Adversarial AI", "LLaMA 2"],
+    "description": "A jailbroken LLaMA 2 (7B) model fine-tuned for red-teaming and offensive threat modeling. Auto-generates adversarial prompts to test application security and design robust detection rules.",
+    "features": [
+      "Generates mock phishing payloads and exploit patterns",
+      "Adversarial prompt generation to test LLM security guardrails",
+      "Directly sharpens detection engineer hypothesis generation",
+      "Fully sandboxed locally to prevent misuse"
+    ],
+    "github": "https://github.com/sanjaykotabagi/adversarial-llama",
+    "demo": "",
+    "docs": "#"
+  },
+  {
+    "id": "triage-automation-scripts",
+    "title": "Incident Enrichment Automation Suite",
+    "category": "cybersecurity",
+    "tech": ["Python", "REST APIs", "Splunk SPL", "Okta IAM"],
+    "description": "A collection of custom Python scripts designed during Deloitte USI tenure that automates alert triage, cutting investigation times from 20+ minutes to under 3 minutes.",
+    "features": [
+      "Automated IP, Domain, and File Hash reputation lookup queries",
+      "Alert correlation rule sets identifying Okta credential abuse",
+      "Automated ticket escalation to L2 handlers",
+      "Cleans and parses raw log outputs dynamically"
+    ],
+    "github": "https://github.com/sanjaykotabagi/enrichment-automation",
+    "demo": "",
+    "docs": "#"
+  }
+]

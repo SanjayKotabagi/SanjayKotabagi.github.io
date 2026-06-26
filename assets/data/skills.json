@@ -1,0 +1,33 @@
+{
+  "siem_xdr": [
+    { "name": "Microsoft Sentinel", "level": 92, "tags": ["KQL Queries", "Threat Detection"] },
+    { "name": "IBM QRadar", "level": 90, "tags": ["AQL Queries", "Rules Tuning"] },
+    { "name": "Splunk Enterprise", "level": 88, "tags": ["SPL Queries", "Search Dashboards"] },
+    { "name": "IBM XDR", "level": 85, "tags": ["Incident Investigation"] }
+  ],
+  "edr_epp": [
+    { "name": "SentinelOne", "level": 90, "tags": ["Threat Hunting", "Remediation"] },
+    { "name": "Microsoft Defender XDR", "level": 92, "tags": ["Advanced Hunting", "Policies"] },
+    { "name": "Carbon Black", "level": 82, "tags": ["Process Trees"] }
+  ],
+  "cloud_security": [
+    { "name": "AWS GuardDuty", "level": 85, "tags": ["Threat Intel", "Activity Logs"] },
+    { "name": "Prisma Cloud", "level": 82, "tags": ["Compliance", "CSPM"] },
+    { "name": "Microsoft Defender for Cloud Apps", "level": 88, "tags": ["CASB Policies", "Alerts"] },
+    { "name": "Azure AD / Okta IAM", "level": 86, "tags": ["ATO Detection", "Enforcement"] }
+  ],
+  "automation": [
+    { "name": "Python (Security Scripting)", "level": 95, "tags": ["Phishing Triage", "IOC Extraction"] },
+    { "name": "SOAR Workflow Design", "level": 88, "tags": ["Playbook Orchestration", "API Integration"] }
+  ],
+  "ai_ml_security": [
+    { "name": "LLM Fine-Tuning (LLaMA 2)", "level": 85, "tags": ["Historical Alerts", "Runbooks"] },
+    { "name": "AI-Based Alert Classification", "level": 88, "tags": ["Classification Engine", "Verdict Gen"] },
+    { "name": "Adversarial AI Research", "level": 80, "tags": ["Prompt Gen", "Adversarial Input"] }
+  ],
+  "languages_dev": [
+    { "name": "Python", "level": 95, "tags": ["OOP", "Log Parsers", "Streamlit"] },
+    { "name": "Java / JavaScript", "level": 82, "tags": ["Logic Modules", "JSON APIs"] },
+    { "name": "SQL (MySQL, PL/SQL)", "level": 85, "tags": ["Data Queries", "Log Archives"] }
+  ]
+}

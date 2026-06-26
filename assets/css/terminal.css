@@ -1,0 +1,161 @@
+/**
+ * Antigravity Engineering - Interactive Command Terminal CSS
+ */
+
+.terminal-window {
+  font-family: var(--font-terminal);
+  background: rgba(5, 8, 22, 0.85);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow), inset 0 0 20px rgba(0, 0, 0, 0.6);
+  backdrop-filter: var(--glass-backdrop-blur);
+  -webkit-backdrop-filter: var(--glass-backdrop-blur);
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.terminal-window.maximized {
+  height: 650px;
+}
+
+/* Terminal Header */
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(11, 17, 32, 0.9);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  user-select: none;
+}
+
+.terminal-controls {
+  display: flex;
+  gap: var(--spacing-xxs);
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.terminal-dot.close { background-color: var(--color-danger); }
+.terminal-dot.minimize { background-color: var(--color-warning); }
+.terminal-dot.maximize { background-color: var(--color-success); }
+
+.terminal-dot:hover {
+  filter: brightness(1.2);
+}
+
+.terminal-title {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.terminal-status {
+  font-size: 0.75rem;
+  color: var(--color-success);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Terminal Screen / Output */
+.terminal-body {
+  flex: 1;
+  padding: var(--spacing-md);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  scroll-behavior: smooth;
+}
+
+/* CLI Text Styles */
+.terminal-accent {
+  color: var(--color-primary);
+}
+
+.terminal-secondary {
+  color: var(--color-secondary);
+}
+
+.terminal-success {
+  color: var(--color-success);
+}
+
+.terminal-warning {
+  color: var(--color-warning);
+}
+
+.terminal-danger {
+  color: var(--color-danger);
+}
+
+.terminal-muted {
+  color: var(--color-muted);
+}
+
+.ascii-art {
+  white-space: pre;
+  line-height: 1.1;
+  font-size: 0.7rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(var(--rgb-primary), 0.4);
+}
+
+/* Input Form Row */
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.terminal-prompt {
+  white-space: nowrap;
+  color: var(--color-success);
+}
+
+.terminal-prompt-user {
+  color: var(--color-primary);
+}
+
+.terminal-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.terminal-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-terminal);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  caret-color: transparent; /* custom cursor will blink */
+}
+
+/* Suggestion/Command helpers */
+.terminal-suggestions {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  padding: 2px var(--spacing-xs);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}

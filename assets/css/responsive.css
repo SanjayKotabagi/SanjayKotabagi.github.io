@@ -1,0 +1,138 @@
+/**
+ * Antigravity Engineering - Responsive Breakpoints & Mobile Adaptability
+ */
+
+/* Desktop Extra Large */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .dashboard-grid {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Tablet (Landscape & Portrait) */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .hero-left {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .cyber-header {
+    padding: var(--spacing-xs) 0;
+  }
+
+  .brand-text {
+    display: none; /* Hide 'SOC DASHBOARD' text on mobile, keep logo/accent */
+  }
+
+  .telemetry-bar {
+    display: none; /* Hide header telemetry row on mobile for space */
+  }
+
+  .nav-links {
+    gap: var(--spacing-sm);
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-sm);
+  }
+
+  .cyber-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
+  }
+
+  .terminal-window {
+    height: 380px;
+  }
+
+  .terminal-window.maximized {
+    height: 480px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .mitre-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+}
+
+/* Tiny Screens */
+@media (max-width: 480px) {
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    gap: var(--spacing-xs);
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+}

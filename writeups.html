@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="secret">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Write-ups & Incident Logs</title>
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="scanline-screen">
+
+  <!-- ==========================================
+       TOP NAVIGATION HEADER
+       ========================================== -->
+  <header class="cyber-header" style="position: sticky; top: 0;">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <span class="brand-accent">&gt;//</span>
+        <span class="brand-name">SANJAY</span>
+      </a>
+      
+      <nav style="display: flex; align-items: center; gap: var(--spacing-md);">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="experience.html" class="nav-link">Experience</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="cyberlab.html" class="nav-link">Cyber Lab</a></li>
+          <li><a href="writeups.html" class="nav-link active">Write-ups</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button id="theme-toggle-btn" class="status-badge critical">
+          <span id="security-level-indicator">SECURE LEVEL: SECRET</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN CONTENT CONTAINER
+       ========================================== -->
+  <main class="dashboard-container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
+    <div class="hero-pretitle">
+      <span class="pulse-node"></span>
+      <span>DIAGNOSTICS: REPORT_INDEX.DB</span>
+    </div>
+    <h1 class="hero-title" style="font-size: 2.75rem; margin-bottom: var(--spacing-md);">SECURITY <span style="color: var(--color-primary);">WRITE-UPS</span></h1>
+
+    <!-- Search & Filter Area -->
+    <div class="search-filter-row">
+      <div class="search-input-wrapper">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" id="writeup-search" class="search-input" placeholder="Search write-ups or tags..." onkeyup="filterWriteups()">
+      </div>
+
+      <div class="filter-group">
+        <button class="filter-btn active" onclick="filterCategory('all', this)">All Logs</button>
+        <button class="filter-btn" onclick="filterCategory('detection-engineering', this)">Detection Eng</button>
+        <button class="filter-btn" onclick="filterCategory('soc-investigations', this)">SOC Investigation</button>
+        <button class="filter-btn" onclick="filterCategory('python-automation', this)">Automation</button>
+        <button class="filter-btn" onclick="filterCategory('threat-hunting', this)">Threat Hunt</button>
+      </div>
+    </div>
+
+    <!-- Grid Container for Blog/Writeups -->
+    <div id="writeups-container" class="blog-grid">
+      
+      <!-- Card 1 -->
+      <div class="cyber-card blog-card fade-in-up active" data-category="detection-engineering">
+        <div class="blog-meta">
+          <span>DATE: 2026-05-12</span>
+          <span>•</span>
+          <span class="terminal-accent">6 MIN READ</span>
+        </div>
+        <h3 class="card-title">
+          <i data-lucide="shield-alert" class="terminal-danger"></i>
+          <span>Writing Sigma Rules to Detect Living-off-the-Land Binaries (LOLBins)</span>
+        </h3>
+        <p class="terminal-muted" style="font-size: 0.85rem; margin-bottom: var(--spacing-md);">An in-depth guide on detecting threat actors leveraging built-in Windows utilities (like certutil, mshta) for malicious execution, with custom Sigma and Splunk SPL examples.</p>
+        
+        <div style="margin-bottom: var(--spacing-sm); display: flex; gap: 4px; flex-wrap: wrap;">
+          <span class="tech-badge">Sigma</span>
+          <span class="tech-badge">Splunk</span>
+          <span class="tech-badge">LOLBins</span>
+          <span class="tech-badge">Windows Sec</span>
+        </div>
+        <a href="#" class="blog-link-btn terminal-accent">Read Full Log &gt;</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="cyber-card blog-card fade-in-up active" data-category="soc-investigations">
+        <div class="blog-meta">
+          <span>DATE: 2026-04-05</span>
+          <span>•</span>
+          <span class="terminal-accent">8 MIN READ</span>
+        </div>
+        <h3 class="card-title">
+          <i data-lucide="shield-alert" class="terminal-danger"></i>
+          <span>Deconstructing a Multi-Stage Phishing Attack with Log Correlation</span>
+        </h3>
+        <p class="terminal-muted" style="font-size: 0.85rem; margin-bottom: var(--spacing-md);">Walkthrough of a SOC investigation tracking a malicious payload from email headers, firewall logs, endpoint processes, to registry updates using QRadar correlation alerts.</p>
+        
+        <div style="margin-bottom: var(--spacing-sm); display: flex; gap: 4px; flex-wrap: wrap;">
+          <span class="tech-badge">Incident Response</span>
+          <span class="tech-badge">IBM QRadar</span>
+          <span class="tech-badge">Log Analysis</span>
+          <span class="tech-badge">Phishing</span>
+        </div>
+        <a href="#" class="blog-link-btn terminal-accent">Read Full Log &gt;</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="cyber-card blog-card fade-in-up active" data-category="python-automation">
+        <div class="blog-meta">
+          <span>DATE: 2026-03-20</span>
+          <span>•</span>
+          <span class="terminal-accent">5 MIN READ</span>
+        </div>
+        <h3 class="card-title">
+          <i data-lucide="shield-alert" class="terminal-danger"></i>
+          <span>Automating Threat Enrichment in Splunk with Custom Python APIs</span>
+        </h3>
+        <p class="terminal-muted" style="font-size: 0.85rem; margin-bottom: var(--spacing-md);">Learn how to build a Python daemon that monitors Splunk search results, queries threat intelligence feeds, and dynamically updates firewall rules.</p>
+        
+        <div style="margin-bottom: var(--spacing-sm); display: flex; gap: 4px; flex-wrap: wrap;">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Splunk API</span>
+          <span class="tech-badge">Automation</span>
+          <span class="tech-badge">Threat Intel</span>
+        </div>
+        <a href="#" class="blog-link-btn terminal-accent">Read Full Log &gt;</a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="cyber-card blog-card fade-in-up active" data-category="threat-hunting">
+        <div class="blog-meta">
+          <span>DATE: 2026-02-10</span>
+          <span>•</span>
+          <span class="terminal-accent">7 MIN READ</span>
+        </div>
+        <h3 class="card-title">
+          <i data-lucide="shield-alert" class="terminal-danger"></i>
+          <span>Hunting for Lateral Movement in Active Directory Logs</span>
+        </h3>
+        <p class="terminal-muted" style="font-size: 0.85rem; margin-bottom: var(--spacing-md);">A threat hunting guide focusing on event log IDs (4624, 4625, 4768) to track lateral movement techniques like Pass-the-Hash and Kerberoasting.</p>
+        
+        <div style="margin-bottom: var(--spacing-sm); display: flex; gap: 4px; flex-wrap: wrap;">
+          <span class="tech-badge">Threat Hunting</span>
+          <span class="tech-badge">Active Directory</span>
+          <span class="tech-badge">Event Logs</span>
+          <span class="tech-badge">MITRE ATT&CK</span>
+        </div>
+        <a href="#" class="blog-link-btn terminal-accent">Read Full Log &gt;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================
+       GLOBAL FOOTER
+       ========================================== -->
+  <footer class="cyber-footer">
+    <div class="footer-content">
+      <ul class="social-links">
+        <li><a href="https://github.com/sanjaykotabagi" target="_blank" class="social-link"><i data-lucide="github"></i></a></li>
+        <li><a href="https://linkedin.com" target="_blank" class="social-link"><i data-lucide="linkedin"></i></a></li>
+        <li><a href="mailto:sanjaymkotabagi@gmail.com" class="social-link"><i data-lucide="mail"></i></a></li>
+      </ul>
+      <p style="margin-top: var(--spacing-xxs);">© 2026 Sanjay M Kotabagi | Security Operations Center Portal | All logs monitored</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/cursor.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    let activeCategory = 'all';
+
+    function filterCategory(cat, btn) {
+      activeCategory = cat;
+      
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      applyFilters();
+    }
+
+    function filterWriteups() {
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const searchVal = document.getElementById('writeup-search').value.toLowerCase();
+      const cards = document.querySelectorAll('#writeups-container .blog-card');
+      
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const titleText = card.querySelector('.card-title span').textContent.toLowerCase();
+        const descText = card.querySelector('p').textContent.toLowerCase();
+        const categoryMatch = (activeCategory === 'all' || cat === activeCategory);
+        const searchMatch = (titleText.includes(searchVal) || descText.includes(searchVal));
+
+        if (categoryMatch && searchMatch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

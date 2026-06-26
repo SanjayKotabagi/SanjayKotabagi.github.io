@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="secret">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanjay M Kotabagi | SOC Analyst L2 & Automation Dashboard</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Professional portfolio and security command dashboard of Sanjay M Kotabagi, SOC Analyst L2, AI Security Automation Developer, and Detection Engineer.">
+  <meta name="keywords" content="Cybersecurity, SOC Analyst, SIEM, Microsoft Sentinel, IBM QRadar, Splunk, Threat Detection, Python Automation, LLaMA 2, Adversarial AI">
+  <meta name="author" content="Sanjay M Kotabagi">
+  <link rel="canonical" href="https://jaycyber.github.io/index.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sanjay M Kotabagi | Cybersecurity Portfolio & SOC Dashboard">
+  <meta property="og:description" content="Explore live threat intelligence topologies, incident write-ups, and interactive shell terminals.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jaycyber.github.io/index.html">
+  
+  <!-- App Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/terminal.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="scanline-screen">
+
+  <!-- ==========================================
+       1. SYSTEM DECRYPTION / BOOT LOADER OVERLAY
+       ========================================== -->
+  <div id="loader-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #050816; z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--font-terminal); color: var(--color-primary); padding: var(--spacing-md);">
+    <div style="width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: var(--spacing-sm);">
+      <div style="font-size: 1.25rem; font-weight: 700; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0, 212, 255, 0.4); text-align: center;">SYSTEM BOOT INITIATED</div>
+      
+      <!-- Console telemetry logs -->
+      <div class="loader-logs" style="height: 150px; background: rgba(11, 17, 32, 0.8); border: 1px solid rgba(0, 212, 255, 0.15); border-radius: var(--radius-sm); padding: var(--spacing-sm); font-size: 0.75rem; overflow-y: auto; color: var(--color-muted); display: flex; flex-direction: column; gap: 4px;">
+        <!-- Injected via loader.js -->
+      </div>
+      
+      <!-- Progress Bar Container -->
+      <div style="width: 100%; height: 6px; background: rgba(255, 255, 255, 0.05); border-radius: var(--radius-full); overflow: hidden; border: 1px solid rgba(0, 212, 255, 0.1);">
+        <div class="loader-progress-bar-fill" style="width: 0%; height: 100%; background: var(--color-primary); box-shadow: 0 0 10px var(--color-primary); transition: width 0.1s linear;"></div>
+      </div>
+      
+      <div class="space-between" style="font-size: 0.8rem; color: var(--color-muted);">
+        <span>DECRYPTING INTERFACES...</span>
+        <span class="loader-percent">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       2. TOP NAVIGATION HEADER (Telemetry dashboard)
+       ========================================== -->
+  <header class="cyber-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <span class="brand-accent">&gt;//</span>
+        <span class="brand-name">SANJAY</span>
+        <span class="brand-text" style="font-size: 0.75rem; font-weight: 400; color: var(--color-muted); border-left: 1px solid rgba(255, 255, 255, 0.1); padding-left: var(--spacing-xs); margin-left: 4px; letter-spacing: 1px;">SOC DASHBOARD</span>
+      </a>
+      
+      <!-- Telemetry Ticker -->
+      <div class="telemetry-bar">
+        <div class="telemetry-item">
+          <span>LATENCY:</span>
+          <span id="telemetry-latency" class="terminal-accent">24ms</span>
+        </div>
+        <div class="telemetry-item">
+          <span>STATUS:</span>
+          <span id="telemetry-threat" class="status-badge secure"><span class="dot"></span>OPTIMAL</span>
+        </div>
+        <div class="telemetry-item">
+          <span>UPTIME:</span>
+          <span id="telemetry-uptime" class="terminal-success">00d 00h 00m 00s</span>
+        </div>
+      </div>
+
+      <nav style="display: flex; align-items: center; gap: var(--spacing-md);">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="experience.html" class="nav-link">Experience</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="cyberlab.html" class="nav-link">Cyber Lab</a></li>
+          <li><a href="writeups.html" class="nav-link">Write-ups</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        
+        <!-- Theme/Clearance toggle button -->
+        <button id="theme-toggle-btn" class="status-badge critical" style="cursor: pointer; border: 1px solid rgba(255, 77, 109, 0.2); outline: none; background: rgba(255, 77, 109, 0.05); font-weight: 600;">
+          <span id="security-level-indicator">SECURE LEVEL: SECRET</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       3. HERO PANEL WITH CANVAS BACKGROUND
+       ========================================== -->
+  <main class="hero-section">
+    <!-- Active background node particle canvas -->
+    <div class="particles-container">
+      <canvas id="particles-canvas"></canvas>
+    </div>
+    
+    <div class="moving-grid-bg"></div>
+
+    <div class="dashboard-container" style="width: 100%;">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-pretitle">
+            <span class="pulse-node"></span>
+            <span>INTEL STREAM INGEST ACTIVE</span>
+          </div>
+          <h1 class="hero-title" style="font-size: 3.2rem;">SANJAY // <span style="color: var(--color-primary); text-shadow: 0 0 15px rgba(0, 212, 255, 0.25);">SOC ANALYST L2</span></h1>
+          
+          <div style="font-family: var(--font-terminal); font-size: 1.25rem; font-weight: 500; height: 32px; display: flex; align-items: center; gap: 4px; color: var(--color-success); margin-bottom: var(--spacing-sm);">
+            <span>$ cat specialization:</span>
+            <span id="typewriter-profession"></span>
+            <span class="typed-cursor">|</span>
+          </div>
+          
+          <p class="hero-description">L2 SOC Analyst and Security Automation Specialist with 4+ years across Big4 (PwC, Deloitte USI). Specialized in automating phishing triage and deploying in-house LLMs to reduce response times, while managing Microsoft Sentinel, IBM QRadar, and EDR threat hunting.</p>
+          
+          <div class="hero-ctas">
+            <a href="projects.html" class="cyber-btn cyber-btn-primary magnetic">
+              <i data-lucide="shield-check"></i> VIEW PROJECTS
+            </a>
+            <a href="resume.html" class="cyber-btn cyber-btn-secondary magnetic">
+              <i data-lucide="file-text"></i> INTERACTIVE CV
+            </a>
+            <a href="contact.html" class="cyber-btn cyber-btn-secondary magnetic" style="border-color: rgba(255,255,255,0.15); color: var(--color-text);">
+              <i data-lucide="mail"></i> REACH OUT
+            </a>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             4. CLI COMMAND CONSOLE WINDOW
+             ========================================== -->
+        <div class="hero-right">
+          <div class="terminal-window cyber-glow-pulse">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="terminal-dot close"></span>
+                <span class="terminal-dot minimize"></span>
+                <span class="terminal-dot maximize"></span>
+              </div>
+              <span class="terminal-title">guest@sanjay-soc-shell: ~</span>
+              <span class="terminal-status">
+                <i data-lucide="wifi" style="width: 12px; height: 12px;"></i> SSH ACTIVE
+              </span>
+            </div>
+            
+            <div id="terminal-body" class="terminal-body">
+              <!-- welcome logs and commands output printed by terminal.js -->
+            </div>
+            
+            <div class="terminal-input-line" style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding: var(--spacing-xs) var(--spacing-md); background: rgba(5, 8, 22, 0.95);">
+              <span class="terminal-prompt">[guest@sanjay-soc ~]$</span>
+              <div class="terminal-input-wrapper">
+                <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" placeholder="type a command..." autofocus>
+                <span id="terminal-caret" class="terminal-cursor"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       5. METRIC TELEMETRY COUNTER ROWS
+       ========================================== -->
+  <section class="dashboard-container" style="position: relative; z-index: 10; margin-top: -80px; margin-bottom: var(--spacing-xl);">
+    <div class="stats-row">
+      <div class="cyber-card stat-card fade-in-up">
+        <div class="stat-number" data-target="4" data-suffix="+">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="cyber-card stat-card fade-in-up">
+        <div class="stat-number" data-target="5000" data-suffix="/d">0</div>
+        <div class="stat-label">SIEM Alerts Triaged</div>
+      </div>
+      <div class="cyber-card stat-card fade-in-up">
+        <div class="stat-number" data-target="40" data-suffix="%">0</div>
+        <div class="stat-label">Time-to-Handle Saved</div>
+      </div>
+      <div class="cyber-card stat-card fade-in-up">
+        <div class="stat-number" data-target="24" data-suffix="/7">0</div>
+        <div class="stat-label">Active Monitoring Uptime</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. GLOBAL FOOTER
+       ========================================== -->
+  <footer class="cyber-footer">
+    <div class="footer-content">
+      <ul class="social-links">
+        <li><a href="https://github.com/sanjaykotabagi" target="_blank" class="social-link"><i data-lucide="github"></i></a></li>
+        <li><a href="https://linkedin.com" target="_blank" class="social-link"><i data-lucide="linkedin"></i></a></li>
+        <li><a href="mailto:sanjaymkotabagi@gmail.com" class="social-link"><i data-lucide="mail"></i></a></li>
+      </ul>
+      <p style="margin-top: var(--spacing-xxs);">© 2026 Sanjay M Kotabagi | Security Operations Center Portal | All logs monitored</p>
+      <button id="back-to-top" class="cyber-btn cyber-btn-secondary" style="opacity: 0; pointer-events: none; position: fixed; bottom: 30px; right: 30px; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; padding: 0; box-shadow: var(--glass-shadow); z-index: 1000; border-color: var(--color-primary); color: var(--color-primary); transition: opacity 0.3s ease;">
+        <i data-lucide="arrow-up" style="width: 18px; height: 18px;"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- External CDN Libraries (GSAP for reveals, Lucide for UI icons) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Project Scripts -->
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/cursor.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/scroll.js"></script>
+  <script src="assets/js/terminal.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

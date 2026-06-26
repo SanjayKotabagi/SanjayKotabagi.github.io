@@ -1,0 +1,21 @@
+{
+  "short_name": "Jay Security",
+  "name": "Jay - Cybersecurity Portfolio & SOC Dashboard",
+  "icons": [
+    {
+      "src": "assets/images/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/images/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#050816",
+  "theme_color": "#00D4FF",
+  "display": "standalone",
+  "orientation": "portrait"
+}

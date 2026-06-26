@@ -1,0 +1,42 @@
+[
+  {
+    "id": "sigma-lolbins",
+    "title": "Writing Sigma Rules to Detect Living-off-the-Land Binaries (LOLBins)",
+    "category": "detection-engineering",
+    "date": "2026-05-12",
+    "readTime": "6 min read",
+    "summary": "An in-depth guide on detecting threat actors leveraging built-in Windows utilities (like certutil, mshta) for malicious execution, with custom Sigma and Splunk SPL examples.",
+    "tags": ["Sigma", "Splunk", "LOLBins", "Windows Security"],
+    "markdownPath": "assets/docs/writeups/sigma-lolbins.md"
+  },
+  {
+    "id": "soc-phishing-investigation",
+    "title": "Deconstructing a Multi-Stage Phishing Attack with Log Correlation",
+    "category": "soc-investigations",
+    "date": "2026-04-05",
+    "readTime": "8 min read",
+    "summary": "Walkthrough of a SOC investigation tracking a malicious payload from email headers, firewall logs, endpoint processes, to registry updates using QRadar correlation alerts.",
+    "tags": ["Incident Response", "IBM QRadar", "Log Analysis", "Phishing"],
+    "markdownPath": "assets/docs/writeups/soc-phishing.md"
+  },
+  {
+    "id": "python-splunk-soar",
+    "title": "Automating Threat Enrichment in Splunk with Custom Python APIs",
+    "category": "python-automation",
+    "date": "2026-03-20",
+    "readTime": "5 min read",
+    "summary": "Learn how to build a Python daemon that monitors Splunk search results, queries threat intelligence feeds, and dynamically updates firewall rules to block high-confidence malicious IPs.",
+    "tags": ["Python", "Splunk API", "Automation", "Threat Intel"],
+    "markdownPath": "assets/docs/writeups/splunk-enrichment.md"
+  },
+  {
+    "id": "hunting-lateral-movement",
+    "title": "Hunting for Lateral Movement in Active Directory Logs",
+    "category": "threat-hunting",
+    "date": "2026-02-10",
+    "readTime": "7 min read",
+    "summary": "A threat hunting guide focusing on event log IDs (4624, 4625, 4768) to track lateral movement techniques like Pass-the-Hash and Kerberoasting.",
+    "tags": ["Threat Hunting", "Active Directory", "Event Logs", "MITRE ATT&CK"],
+    "markdownPath": "assets/docs/writeups/lateral-movement.md"
+  }
+]

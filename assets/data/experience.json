@@ -1,0 +1,43 @@
+[
+  {
+    "role": "SOC Analyst L2 - Primary Escalation Point",
+    "company": "PwC",
+    "location": "Bengaluru, Karnataka",
+    "period": "May 2025 – Present",
+    "description": "Serve as the primary L2 escalation analyst for complex, high-severity alerts across SIEM, SOAR, IR, and Advanced Threat Hunting teams, trusted first call for US-based enterprise client incidents.",
+    "achievements": [
+      "Single-handedly designed, built, and deployed a multi-workflow SOC automation platform, eliminating repetitive manual tasks across the entire analyst team without vendor dependency.",
+      "Co-architected, fine-tuned, and productionized an in-house LLM trained on historical SOC alert data and runbooks, delivering a 30-40% reduction in time-to-handle across qualifying alerts.",
+      "Fine-tuned a jailbroken LLaMA 2 (7B) model as a red-team companion for adversarial prompt generation and AI threat modeling, directly improving detection hypothesis quality.",
+      "Led proactive threat hunting campaigns in collaboration with ATH teams to uncover adversary TTPs missed by automated detection systems.",
+      "Managed the critical incident lifecycle end-to-end with zero SLA breaches, maintaining full client satisfaction."
+    ],
+    "tech": ["Microsoft Sentinel", "IBM QRadar", "Splunk", "SentinelOne", "Python", "LLaMA 2", "Adversarial AI", "Threat Hunting"]
+  },
+  {
+    "role": "SOC Analyst - L1 Escalation",
+    "company": "Deloitte USI",
+    "location": "Bengaluru, Karnataka",
+    "period": "Feb 2023 – Apr 2025",
+    "description": "Delivered 24x7 SOC coverage for multiple high-profile US enterprise clients as the trusted bridge between front-line L1 analysts and L2/IR teams.",
+    "achievements": [
+      "Built custom Python automation scripts for phishing triage, cutting per-alert investigation time from 20+ minutes to under 3 minutes.",
+      "Monitored and correlated security events simultaneously across firewalls, IDS/IPS, EDR, SIEM, email security, and cloud platforms.",
+      "Developed detection hypotheses for Okta abuse, Azure account takeover, and cloud misuse scenarios, with several adopted as permanent monitoring rules.",
+      "Received Spot Award for exceptional SLA adherence, accuracy, and dedication across all client SOC tickets, along with multiple direct client commendations."
+    ],
+    "tech": ["Python", "SIEM log correlation", "EDR", "Okta IAM", "Azure Security", "Email Forensics", "IDS/IPS"]
+  },
+  {
+    "role": "Cloud Security L1",
+    "company": "Orbit Technologies",
+    "location": "Bengaluru, Karnataka",
+    "period": "Jun 2022 – Dec 2022",
+    "description": "Monitored and audited cloud tenant configurations and identified suspicious activities across cloud assets.",
+    "achievements": [
+      "Reviewed log dashboard indices daily to identify unusual behavior patterns.",
+      "Investigated alert triggers from Microsoft Defender for Cloud and coordinated remediation protocols."
+    ],
+    "tech": ["Microsoft Defender for Cloud", "Cloud Auditing", "Azure AD", "Dashboard Monitoring"]
+  }
+]
